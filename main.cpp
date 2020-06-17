@@ -21,18 +21,18 @@ using namespace std;
 vector<int> twoSum(vector<int>& nums, int target) {
 //get size of array
 int lengthNums = sizeof(nums)/sizeof(nums[0]);
-//brute force check each element
-for (int i = 0; i < lengthNums; i++){
-   for (int j = i + 1; j < lengthNums; j++){
-      if (nums[j] == target - nums[i]){
-        printf("Solution found at %d and %d", i,j);
-        vector<int> solution{ i , j };
-        return solution;
-      }//end if match
-   }//end for j
-}//end for i
-throw std::invalid_argument("No Solution for Target");
-}
+     //brute force check each element
+     for (int i = 0; i < nums.size(); i++){
+        for (int j = i + 1; j < nums.size(); j++){
+           if (nums[j] == target - nums[i]){
+            // printf("Solution found at %d and %d", i,j);
+             vector<int> solution{ i , j };
+             return solution;
+           }//end if match
+        }//end for j
+     }//end for i
+ throw std::invalid_argument("No Solution for Target");
+ }
 
 
 /* main driver
